@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <title>자동 알람 반복</title>
 	<style>
 		#wrap{
@@ -25,11 +25,31 @@
 			height:200px;
 			//background-color:yellow;
 		}
+
+		@media only screen and (max-width: 600px){
+			body{
+				//font-size:50px;	
+				//background-color:red;
+						
+			}
+			h1{
+				font-size:50px;
+			}
+			.header{
+				font-size:30px;
+			}
+			button{
+				width:100px;
+				height:100px;
+				font-size:40px;
+			}
+		}
 	</style>
     </head>
     <body>
         <div id="wrap">
 	<div class="header">
+		*50초 버튼을 누르고 시작 버튼을 누르면 됩니다.
 	</div>
 	<div class="contents">
 	</div>
@@ -69,9 +89,10 @@
 		startButton.style.backgroundColor = "red";
 		startButton.style.color = "white";
 		startButton.style.borderRadius = "50px";
-		startButton.style.marginTop = "35px";
+		//startButton.style.marginTop = "35px";
+		startButton.style.margin= "50px 0px 0px 100px";
 
-
+		
 		var check= true;
 		//var time2;
 		//var check;
