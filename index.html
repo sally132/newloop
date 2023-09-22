@@ -6,8 +6,24 @@
 	<style>
 		#wrap{
 			width:100%;
-			height:100%;
-			background-color:green;
+			height:900px;
+			//background-color:green;
+		}
+ 		.header{
+			width:100%;		
+			height:200px;
+			//background-color:red;
+			
+		}
+		.contents{
+			width:100%;
+			height:500px;
+			//background-color:orange;
+		}
+		.footer{
+			width:100%;
+			height:200px;
+			//background-color:yellow;
 		}
 	</style>
     </head>
@@ -21,6 +37,164 @@
 	</div>
         </div>
         <script>
+	console.log("되냐");
+		var di = document.createElement("div");
+		var wrap = document.getElementById("wrap");
+		var contents  =wrap.getElementsByClassName("contents")[0];
+		console.log(contents);
+		contents.appendChild(di);
+		var di2 = document.createElement("div");
+		contents.appendChild(di2);
+		di2.style.float = "left";
+		di2.style.marginRight = "50px";
+		var h = document.createElement("h1");
+		var zero = document.createTextNode("0:00");
+		h.appendChild(zero);
+		di2.appendChild(h);
+
+		var di3 = document.createElement("div");
+		contents.appendChild(di3);
+		var bu1 = document.createElement("button");
+		bu1.innerText = "50초";
+		di3.appendChild(bu1);
+		di3.style.float = "left";
+		di3.style.marginRight = "50px";
+		di3.style.marginTop = "35px";
+		//var inpvalue = inp.value;
+		//console.log(inpvalue);	
+
+		var startButton = document.createElement("button");
+		contents.appendChild(startButton);
+		startButton.innerText = "시작";
+		startButton.style.backgroundColor = "red";
+		startButton.style.color = "white";
+		startButton.style.borderRadius = "50px";
+		startButton.style.marginTop = "35px";
+
+
+		var check= true;
+		//var time2;
+		//var check;
+		bu1.addEventListener("click", function aboutTime(){
+			if(check==true){
+				//time = "입력되었음";
+				//console.log("이거 안에임"+time2);
+				var fifty = document.createTextNode("0:50");
+				//console.log(fifty);
+				h.removeChild(zero); 	
+				h.appendChild(fifty);
+				//di2.innerText("00:50");
+				//console.log("됐음");
+				check=false;
+					startButton.addEventListener("click", function exec(){
+						
+								console.log("이거 실행됨. 확인");
+								var number =50;
+								
+								var minus= setInterval(function (){
+								h.innerText  ="0:"+number;
+								number--;
+								//var numberText = document.createTextNode("0:"+number);
+								
+								//console.log(number);
+									/*if(number==49){
+									//.removeChild(fifty);
+										h.innerText  ="0:"+number;
+										//h.appendChild(numberText);
+										//h.removeChild(numberText);
+									}*/
+									/*if(number<=48){
+										h.innerText = "0:"+number;
+									}*/
+										if(number<=0){
+										//number=0;	
+									
+										//au.src = "alarm.mp3"
+										//console.log(au);*/
+										h.innerHTML = "<h1>"+"끝났습니다."+"</h1>";
+										alert("끝났습니다. 확인버튼을 눌러주세요.");															
+										clearInterval(minus);				
+										exec();
+										//alert("모두 끝났습니다.");																																				//document.write("<h1>"+"끝났습니다."+"</h1>")
+											
+										
+										}
+								},1000);
+						
+						
+						
+					});
+	
+				}
+			
+			});
+
+
+								/*var au = document.createElement("audio");
+								contents.appendChild(au);
+								au.id = "audio";													au.autoplay = true;
+								//au.muted = true;			
+								//au.play();
+								var sou = document.createElement("source");
+								sou.src = "alarm.mp3";
+								sou.type = "audio/mp3";
+								au.appendChild(sou);*/
+
+		/*var au2 = document.createElement("audio");
+		au2.id = "musicplayer";
+		au2.controls = "autoplay";
+		//au2.src = "alarm.mp3";
+		contents.appendChild(au2);	
+		
+		
+		//console.log(time);
+		au2.play();
+		//console.log("시간(1000당 1초) "+time);
+		//console.log("된 거임?"+time2);
+		
+		//var pi = document.createElement("p");	
+		//contents.appendChild(pi);
+ 		
+		//var pi1 = document.getElementsByTagName("p");
+		//var b = "ㅇ";
+		//di2.innerText = b;
+		//pi1.innerHTML = auto;
+		*/
+		
+
+
+		/*var XHR;
+		function createXMLHttpRequest(){
+			if(window.ActiveXObejct){
+			//익스프로러라면
+				XHR = new ActiveXObject("Microsoft.XMLHTTP");
+			}//만약에 인터넷 익스프로러라면
+			else if(window.XMLHttpRequest){
+			//다른브라우저 라면
+				XHR = new XMLHttpRequest();
+			}
+	
+		}	
+		createXMLHttpRequest();
+		console.log(XHR);*/
+
+		/*var a;
+		function b(){
+			if(window.ActiveXObejct){
+			//익스프로러라면
+				a= new ActiveXObject("Microsoft.XMLHTTP");
+			}//만약에 인터넷 익스프로러라면
+			else if(window.XMLHttpRequest){
+			//다른브라우저 라면
+				a = new XMLHttpRequest();
+			}
+	
+		}	
+		b();
+		console.log(a);*/	
+		
+		
+
         </script>
     </body>
 </html>
